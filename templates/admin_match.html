@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Match Creation</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f2f2f2;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        h2 {
+            color: #333;
+            text-align: center;
+            padding: 1em;
+            background-color: #4CAF50;
+            color: white;
+            margin: 0;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        input, select, button {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        #matchesList {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .matchItem {
+            background-color: #fff;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .matchItem span {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        .actionButtons {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Match Creation</h2>
+
+    <form id="match-form" method="post" action="{{ url_for('admin_match') }}">
+        <span>Match Details:</span>
+        <input type="text" name="team1" placeholder="Team 1">
+        <input type="text" name="team2" placeholder="Team 2">
+        <input type="text" name="match_id" placeholder="Match id">
+        <input type="date" name="date" placeholder="Date">
+        <input type="time" name="time" placeholder="Time">
+        <input type="text" name="venue" placeholder="Venue">
+        <span>Match Number:</span>
+        <input type="text" name="match_number" placeholder="Match Number">
+
+        <span>Action:</span>
+        <select name="action">
+            <option value="live">Live</option>
+            <option value="upcoming">Upcoming</option>
+            <option value="finished">Finished</option>
+        </select>
+
+        <div class="actionButtons">
+            <button type="submit">Add Match</button>
+            <!-- You can use JavaScript to prevent the default form submission and handle it asynchronously if needed -->
+            <button type="button" onclick="removeMatch()">Remove Match</button>
+        </div>
+    </form>
+
+</body>
+</html>

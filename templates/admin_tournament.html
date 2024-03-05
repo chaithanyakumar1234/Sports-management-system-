@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tournament Details</title>
+   
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f2f2f2;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 1em;
+        }
+
+        #tournament-details {
+            background-color: #fff;
+            padding: 20px;
+            margin: 20px auto;
+            width: 80%;
+            max-width: 300px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2 {
+            margin: 0;
+            padding: 10px 0;
+            color: #333;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 4px;
+            color: #555;
+        }
+
+        input {
+            padding: 8px;
+            margin-bottom: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 8px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #success-message {
+            margin-top: 20px;
+            color: #008000;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Tournament Form</h1>
+    </header>
+
+    <section id="add-tournament" class="container">
+        <h2>Tournament</h2>
+       
+        <form id="tournament-form" method="post" action="{{ url_for('admin_tournament') }}">
+            <label for="tournamentId">Tournament ID:</label>
+            <input type="text" id="tournamentId" name="tournamentId" required>
+
+            <label for="tournamentName">Tournament Name:</label>
+            <input type="text" id="tournamentName" name="tournamentName" required>
+
+            <label for="startDate">Starting Date:</label>
+            <input type="date" id="startDate" name="startDate" required>
+
+            <label for="endDate">Ending Date:</label>
+            <input type="date" id="endDate" name="endDate" required>
+
+            <label for="location">Location:</label>
+            <input type="address" id="location" name="location" required>
+
+            <button type="submit">Add</button>
+            <button type="button" onclick="removeTournament()">Remove</button>
+        </form>
+
+        <!-- Display success message -->
+        
+    </section>
+
+</body>
+</html>

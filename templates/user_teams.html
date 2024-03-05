@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Teams</title>
+    
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 1em;
+        }
+
+        section {
+            background-color: #fff;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2, h3 {
+            color: #333;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Teams</h1>
+    </header>
+
+    <nav>
+        <!-- Add navigation links here if needed -->
+    </nav>
+
+    <section id="user-teams">
+        <h2>Teams and Players</h2>
+        {% for team in teams %}
+            <h3>{{ team.team_name }}</h3>
+            <ul>
+                {% for player in team.players %}
+                    <li>{{ player.player_name }}</li>
+                {% endfor %}
+            </ul>
+        {% endfor %}
+    </section>
+
+    <footer>
+        <!-- Add footer content here if needed -->
+    </footer>
+
+</body>
+</html>

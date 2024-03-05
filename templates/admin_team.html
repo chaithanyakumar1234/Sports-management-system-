@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Team</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 8px;
+        }
+
+        input,
+        select,
+        button {
+            margin-bottom: 16px;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            cursor: pointer;
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        h2 {
+            margin: 0;
+        }
+
+        .player {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-bottom: 8px;
+        }
+
+        .remove-player {
+            background-color: #ff5c5c;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        .remove-player:hover {
+            background-color: #ff3b3b;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1> Team</h1>
+        <form id="addTeamForm" method="post" action="{{ url_for('admin_team') }}">
+            
+            <label for="teamID">Team ID:</label>
+            <input type="text" id="teamID" name="teamID" required>
+
+            <label for="athleteID">Athlete ID:</label>
+            <input type="text" id="athleteID" name="athleteID" required>
+
+            <label for="teamName">Team Name:</label>
+            <input type="text" id="teamName" name="teamName" required>
+
+            <label for="playerName">Player Name:</label>
+            <input type="text" id="playerName" name="playerName" required>
+
+            <label for="sporttype">Sport Type:</label>
+            <input type="text" id="sporttype" name="sporttype" required>
+
+            <label for="playerRole">Player Role:</label>
+            <input type="text" id="playerRole" name="playerRole" required>
+
+            <button type="submit">Add Team</button>
+            <button type="button" onclick="removePlayer()">Remove Player</button>
+            
+        </form>
+    </div>
+    
+
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sports Management System</title>
+    
+    <style>
+        body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: url('background.jpg'); /* Replace 'background.jpg' with the path to your background image */
+    background-size: cover;
+    background-position: center;
+    color: #333;
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 1em;
+}
+
+nav {
+    background-color: #333;
+    padding: 0.5em;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: #555;
+}
+
+section {
+    background-color: blue(255, 255, 255, 0.9);
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+    margin: auto;
+}
+
+label {
+    margin-bottom: 8px;
+}
+
+input,
+select,
+button {
+    margin-bottom: 16px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1em;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1> Welcome to Sports Management System</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('user_tournaments') }}">Tournaments</a></li>
+            <li><a href="{{ url_for('user_matches') }}">Matches</a></li>
+            <li><a href="{{ url_for('user_teams') }}">Teams</a></li>
+            <li><a href="{{ url_for('sign_out') }}">Sign Out</a></li>
+        </ul>
+    </nav>
+
+    <!-- Add the following form to user_dashboard.html -->
+        <section id="athlete-registration">
+            <h2> Athlete Registration Form</h2>
+            <form id="athleteRegistrationForm" method="post" action="{{ url_for('user_dashboard') }}">
+                <label for="athlete-id">Athlete ID:</label>
+                <input type="text" id="athlete-id" name="athlete-id" required>
+
+                <label for="athlete-name">Athlete Name:</label>
+                <input type="text" id="athlete-name" name="athlete-name" required>
+
+                <label for="athlete-dob">Date of Birth:</label>
+                <input type="date" id="athlete-dob" name="athlete-dob" required>
+
+                <label for="athlete-nationality">Nationality:</label>
+                <input type="text" id="athlete-nationality" name="athlete-nationality" required>
+
+                <label for="athlete-sport-type">Sport Type:</label>
+                <input type="text" id="athlete-sport-type" name="athlete-sport-type" required>
+
+                <label for="athlete-player-role">Player Role:</label>
+                <input type="text" id="athlete-player-role" name="athlete-player-role" required>
+
+                <label for="athlete-gender">Gender:</label>
+                <select id="athlete-gender" name="athlete-gender" required>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+
+                <label for="athlete-height">Height:</label>
+                <input type="text" id="athlete-height" name="athlete-height" required>
+
+                <label for="athlete-weight">Weight:</label>
+                <input type="text" id="athlete-weight" name="athlete-weight" required>
+
+                <button type="submit">Register</button>
+            </form>
+
+            <div id="athleteSuccessMessage" style="display:none; color:blue;">
+                Athlete registration successful!
+            </div>
+        </section>
+    
+</body>
+</html>

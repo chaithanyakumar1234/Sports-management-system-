@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Matches</title>
+
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 1em;
+        }
+
+        nav {
+            background-color: #333;
+            padding: 0.5em;
+            color: white;
+        }
+
+        section {
+            padding: 20px;
+            margin: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Matches</h1>
+    </header>
+
+    <nav>
+        <!-- Add navigation links if needed -->
+    </nav>
+
+    <section>
+        <h2>Matches</h2>
+        <ul>
+            {% for match in matches %}
+                <li>
+                    <strong>Match ID:</strong> {{ match.match_id }}<br>
+                    <strong>Teams:</strong> {{ match.team1 }} vs {{ match.team2 }}<br>
+                    <strong>Date:</strong> {{ match.date }}<br>
+                    <strong>Time:</strong> {{ match.time }}<br>
+                    <strong>Venue:</strong> {{ match.venue }}<br>
+                    <strong>Match Number:</strong> {{ match.match_number }}<br>
+                    <strong>Action:</strong> {{ match.action }}<br>
+                    <!-- Add more details as needed -->
+                </li>
+                <hr> <!-- Add a horizontal line between matches for better separation -->
+            {% endfor %}
+        </ul>
+    </section>
+
+    <footer>
+        <!-- Add footer content if needed -->
+    </footer>
+
+</body>
+</html>

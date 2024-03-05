@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tournament Details</title>
+   
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f2f2f2;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 1em;
+        }
+
+        
+        #tournament-details {
+            background-color: #fff;
+            padding: 20px;
+            margin: 20px auto;
+            width: 300px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            margin: 0;
+            padding: 10px 0;
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #success-message {
+            margin-top: 20px;
+            color: #008000;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Tournament Details</h1>
+    </header>
+
+    <section id="tournament-details">
+        <h2>Tournament Information</h2>
+       
+        <form id="tournament-form">
+            <label for="tournamentId">Tournament ID:</label>
+            <input type="text" id="tournamentId" name="tournamentId" required>
+
+            <label for="tournamentName">Tournament Name:</label>
+            <input type="text" id="tournamentName" name="tournamentName" required>
+
+            <label for="startDate">Starting Date:</label>
+            <input type="date" id="startDate" name="startDate" required>
+
+            <label for="endDate">Ending Date:</label>
+            <input type="date" id="endDate" name="endDate" required>
+
+            <label for="location">Location:</label>
+            <input type="address" id="location" name="location" required>
+
+
+            <button type="button" onclick="addTournament()">add</button>
+            <button type="button" onclick="removeTournament()">Remove</button>
+        </form>
+
+        <!-- Display success message -->
+        <div id="success-message"></div>
+        
+    </section>
+
+    <script>
+        // Function to save tournament
+        function addTournament() {
+            var tournamentId = document.getElementById('tournamentId').value;
+            var tournamentName = document.getElementById('tournamentName').value;
+            var startDate = document.getElementById('startDate').value;
+            var endDate = document.getElementById('endDate').value;
+
+            // Display success message
+            
+            document.getElementById('tournament-form').reset();
+        }
+
+        // Function to remove tournament
+        function removeTournament() {
+            // Clear the success message
+            document.getElementById('success-message').innerHTML = '';
+
+            // Clear the form fields
+            document.getElementById('tournament-form').reset();
+        }
+    </script>
+
+</body>
+</html>
